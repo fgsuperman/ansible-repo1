@@ -1,0 +1,9 @@
+- name: installation apache
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: install apache
+      apt:
+        name: apache2
+        state: absent
+

@@ -1,0 +1,11 @@
+- name: installer docker
+  hosts: localhost
+  become: yes
+  tasks:
+  - name: installer docker
+    apt:
+      name: docker
+      state: absent
+      cache_valid_time: 3600
+      update_cache: yes
+

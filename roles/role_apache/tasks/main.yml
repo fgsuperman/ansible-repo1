@@ -1,0 +1,27 @@
+---
+# tasks file for roles/role_apache
+- name: install apache
+  apt:
+    name: apache2
+    state: present
+    update_cache: yes
+
+- name: copy index.html
+  copy:
+    src: index.html
+    dest: /var/www/html/index.html
+
+- name: copy page1.html
+  copy:
+    src: page1.html
+    dest: /var/www/html/page1.html
+
+- name: delete page1.html
+  file:
+    path: /var/www/html/page1.html
+    state: absent
+
+- name: copy file to index
+  copy:
+    src: "{{ file }}"
+    dest: /var/www/html/index.html

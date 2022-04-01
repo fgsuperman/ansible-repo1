@@ -1,0 +1,8 @@
+all:
+  children:  
+    grp1:
+      hosts:
+        localhost:
+        10.0.0.1:
+#      vars:
+#        file: page3.html
