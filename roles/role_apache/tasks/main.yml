@@ -5,6 +5,11 @@
     name: apache2
     state: present
     update_cache: yes
+  register: task_success
+
+- name: print apt success
+  debug:
+    msg: "taks_success= {{ task_success is success }}"
 
 - name: copy index.html
   copy:
